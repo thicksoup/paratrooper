@@ -57,6 +57,7 @@ module Paratrooper
     end
 
     def default_deploy
+      system_call "ruby -v"
       activate_maintenance_mode
       update_repo_tag
       push_repo
