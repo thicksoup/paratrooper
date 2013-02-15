@@ -42,7 +42,7 @@ module Paratrooper
 
     def run_migrations
       notify_screen("Running database migrations")
-      system_call "heroku run rake db:migrate --app #{app_name}"
+      system_call "heroku", "run rake db:migrate --app #{app_name}"
     end
 
     def app_restart
@@ -81,8 +81,8 @@ module Paratrooper
       formatter.display(message)
     end
 
-    def system_call(call)
-      system_caller.execute(call)
+    def system_call(call, params)
+      system_caller.execute(call, params)
     end
   end
 end
